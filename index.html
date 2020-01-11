@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>My Notes</title>
+  </head>
+
+  <body>
+    <h3>Add a note</h3>
+    <div id="div-add">
+      <form>
+        <div class="form-group">
+          <label for="name">Note Title</label>
+          <input type="text" id="name" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="content">Note Content</label>
+          <textarea
+            id="content"
+            cols="50"
+            rows="4"
+            class="form-control"
+          ></textarea>
+        </div>
+        <button type="button" id="add" class="btn btn-primary">Add</button>
+      </form>
+    </div>
+    <div id="div-list">
+      <h3>View / Edit</h3>
+      <ul id="list"></ul>
+    </div>
+    <div id="div-edit" class="hide">
+      <form>
+        <div class="form-group">
+          <label for="edit-name">Note Title</label>
+          <input type="text" id="edit-name" class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label for="edit-content">Note Content</label>
+          <textarea
+            id="edit-content"
+            cols="50"
+            rows="4"
+            class="form-control"
+          ></textarea>
+        </div>
+        <button type="button" id="save" class="btn btn-primary">Save</button>
+        <button type="button" id="remove" class="btn btn-danger">Delete</button>
+        <button type="button" id="cancel" class="btn btn-secondary">
+          Cancel
+        </button>
+      </form>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
