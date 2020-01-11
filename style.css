@@ -48,15 +48,16 @@ body {
 
 .div-name {
   display: inline-block;
-
   width: calc((100% / 3) * 2);
+  word-break: break-all;
 }
 
 .div-date {
   display: inline-block;
-
   width: calc(100% / 3);
+  vertical-align: top;
 }
+
 #div-edit.hide {
   display: none;
 }
