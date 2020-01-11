@@ -50,6 +50,7 @@ body {
   display: inline-block;
   width: calc((100% / 3) * 2);
   word-break: break-all;
+  padding-right: 5px;
 }
 
 .div-date {
