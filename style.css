@@ -18,15 +18,16 @@ body {
 #list li {
   padding: 20px;
   border: solid 1px #ddd;
+  width: 100%;
 }
 
 #list li:hover {
   cursor: pointer;
 }
 
-#edit-content {
-  width: 500px;
-}
+/* #edit-content {
+  max-width: 500px;
+} */
 
 #div-list {
   padding: 20px;
@@ -35,7 +36,7 @@ body {
 
 #div-add {
   padding: 20px;
-  width: 500px;
+  /* max-width: 500px; */
 }
 
 #div-edit {
