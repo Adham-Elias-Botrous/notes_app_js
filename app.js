@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let content = document.getElementById('content').value;
     let date = new Date().toJSON();
     if (name === '') {
-      alert('You have to insert th Note Title');
+      alert('You have to insert the Note Title');
     } else {
       notesArray.push({ id: count.toString(), name, content, date });
       count++;
