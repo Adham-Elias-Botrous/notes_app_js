@@ -63,3 +63,12 @@ body {
 #list li.selected {
   background-color: #b8d0e6;
 }
+
+@media (max-width: 450px) {
+  #div-add,
+  #div-list,
+  #div-edit,
+  #list {
+    width: 100%;
+  }
+}
