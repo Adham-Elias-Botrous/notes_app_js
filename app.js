@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector(`#list li a[id="${id}"]`).classList.add('selected');
   });
 
-  document.getElementById('cancel').addEventListener('click', function() {
+  document.getElementById('close').addEventListener('click', function() {
     divEdit.classList.add('hide');
     document.querySelector('#list li a.selected').classList.remove('selected');
   });
