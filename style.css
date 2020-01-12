@@ -16,13 +16,18 @@ body {
 }
 
 #list li {
-  padding: 20px;
+  padding: 0;
   border: solid 1px #ddd;
   width: 100%;
 }
 
 #list li:hover {
   cursor: pointer;
+}
+
+#list li a {
+  padding: 20px;
+  display: block;
 }
 
 #edit-content {
@@ -62,10 +67,24 @@ body {
 #div-edit.hide {
   display: none;
 }
-#list li.selected {
-  background-color: #b8d0e6;
+
+#list li a.selected {
+  font-weight: bolder;
+  background-color: #dbedfe;
 }
 
+#list li:hover {
+  background-color: #eceff1;
+}
+
+a,
+a:visited,
+a:link,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
 @media (max-width: 450px) {
   #div-add,
   #div-list,

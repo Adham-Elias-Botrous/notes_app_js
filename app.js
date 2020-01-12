@@ -38,10 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const divDate = document.createElement('DIV');
         divDate.setAttribute('class', 'div-date');
         divDate.textContent = dateString;
-        element.appendChild(divName);
-        element.appendChild(divDate);
-        element.setAttribute('id', id);
-        element.addEventListener('click', showItemEvent);
+        const linkToView = document.createElement('A');
+        linkToView.setAttribute('href', '#div-edit');
+        linkToView.setAttribute('id', id);
+        linkToView.appendChild(divName);
+        linkToView.appendChild(divDate);
+        element.appendChild(linkToView);
+        linkToView.addEventListener('click', showItemEvent);
         list.appendChild(element);
         localStorage.setItem('notes', JSON.stringify(notesArray));
         localStorage.setItem('counter', JSON.stringify(count));
@@ -56,8 +59,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let id = this.getAttribute('id');
     let name = '';
     let content = '';
-    if (document.querySelector('#list li.selected') != null) {
-      document.querySelector('#list li.selected').classList.remove('selected');
+    if (document.querySelector('#list li a.selected') != null) {
+      document
+        .querySelector('#list li a.selected')
+        .classList.remove('selected');
     }
     this.classList.add('selected');
 
@@ -74,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('save').addEventListener('click', function() {
     let name = document.getElementById('edit-name').value;
     let content = document.getElementById('edit-content').value;
-    let id = document.querySelector('#list li.selected').getAttribute('id');
+    let id = document.querySelector('#list li a.selected').getAttribute('id');
     for (let i = 0; i < notesArray.length; i++) {
       if (id === notesArray[i].id) {
         notesArray[i].name = name;
@@ -83,16 +88,16 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     renderSaveNotesArray();
-    document.querySelector(`#list li[id="${id}"]`).classList.add('selected');
+    document.querySelector(`#list li a[id="${id}"]`).classList.add('selected');
   });
 
   document.getElementById('cancel').addEventListener('click', function() {
     divEdit.classList.add('hide');
-    document.querySelector('#list li.selected').classList.remove('selected');
+    document.querySelector('#list li a.selected').classList.remove('selected');
   });
 
   document.getElementById('remove').addEventListener('click', function() {
-    let id = document.querySelector('#list li.selected').getAttribute('id');
+    let id = document.querySelector('#list li a.selected').getAttribute('id');
     let confirmResutl = confirm('Are you sure you want to delete this Note?');
     if (confirmResutl) {
       for (let i = 0; i < notesArray.length; i++) {
